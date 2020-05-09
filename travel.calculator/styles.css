@@ -1,0 +1,90 @@
+/* Travel Calculator Style Sheet */
+
+body {
+ background-image: linear-gradient(to top, #fddb92 0%, #d1fdff 100%);
+}
+
+input {
+  max-width: 100%;
+}
+
+@media screen and (min-width:576px) {}
+
+#box {
+  margin: 0 auto;
+  position: center;
+  width: auto;
+  justify-content: center;
+  align-items: center;
+  /*border-radius: 50px;*/
+}
+
+
+
+.container-fluid div {
+  align-items: center;
+  justify-content: center;
+  position: center;
+}
+
+.form-control {
+  border-radius:2rem;
+}
+
+.card-img {
+  border-radius: 50px;
+  width: 100%;
+}
+
+
+#results {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    margin-left: -100px;
+    width: 200px;
+    height: 200px;
+    border: 2px solid gray;
+    box-shadow: .5vw .5vw 1vw #888888;
+    overflow: hidden;
+    display: none;
+    background: white;
+    z-index: 2
+}
+
+
+#update_button
+{
+  padding-top: .22px;
+  padding-right: .22px;
+  padding-bottom: .22px;
+  padding-left: .22px;
+  border-radius: 50px;
+}
+
+.divider-custom {
+  margin: 1.25rem 0 1.5rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* if want words next to vehicle
+.card-img-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: .25rem;
+  }
+
+/*
+
+if want image to be more round
+
+.card-img {
+  border-radius: 34px;
+}
+*/

@@ -1,0 +1,216 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Travel Calculator 2.0</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <link rel="stylesheet" type="text/css" href="styles.css" />
+  <script type="text/javascript" src="travel_calculator.js"></script>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <form id="travel_calculator_form" name="travel_calculator_form" method="post">
+      <div id="travel_calculator" class="row row-eq-height">
+        <div id="common_costs" class="col-sm-4 order-sm-4 pb-5 pt-3">
+          <div class="card mb-3">
+            <img src="images/pexels-photo-travel.jpg" alt="travel photo" class="card-img">
+            <div class="card-img-overlay">
+              <h1 class="card-title text-white h2">Common</h1>
+            </div>
+          </div>
+
+          <div id="box2" class="col-sm-6 order-sm-3 pb-4 pt-3">
+            <label style="color: black;" for="Distance">Pay Rate</label>
+            <i class="fa fa-dollar"></i>
+            <input class="form-control" name="pay_rate" type="number" id="pay_rate" max="80" min="8" step="1" value="15"> </br>
+          </div>
+
+          <div id="box2" class="col-sm-6 order-sm-3 pb-4 pt-3">
+            <label style="color: black;" for="Travelers">Travelers</label>
+            <i class="fa fa-user"></i>
+            <input class="form-control" name="travelers" type="number" id="travelers" max="5" min="1" step="1" value="1"> </br>
+          </div>
+
+          <div id="box2" class="col-sm-6 order-sm-3 pb-4 pt-3">
+            <label style="color: black;" for="audio_users">Audio Stream</label>
+            <i class="fa fa-assistive-listening-systems"></i>
+            <input name="audio_rate" type="hidden" id="audio_rate" value="0"> </br>
+            <input class="form-control" type="number" name="audio_users" id="audio_users" value="0" min="0"> </br>
+            <label style="color: black" for="Video Stream">Video Stream</label>
+            <i class="fa fa-video-camera"></i>
+            <input name="video_rate" type="hidden" id="video_rate" value="0"> </br>
+            <input class="form-control" name="video_users" type="number" id="video_users" max="4" min="0" step="1" value="0"> <br>
+          </div>
+
+
+          <div id="box2" class="col-sm-6 order-sm-3 pb-4 pt-3">
+            <label style="color: black;" for="Monthly Data">Monthly Data</label>
+            <label style="color: black;" for="Cap">Cap</label>
+            <i class="fa fa-user"></i>
+            <input class="form-control" name="plan_data" type="number" id="plan_data" max="50" min="0" step="1" value="10"> </br>
+          </div>
+
+          <div class="col-12">
+            <h2 class="h6" style="color: #000000;">Overage</h2>
+          </div>
+          <div class="col custom-controls-stacked">
+
+            <label class="h6">
+                <input type="radio" name="plan_overage" value="0" id="overage_rate_0">
+              Free</label>
+            <label class="h6">
+              <input type="radio" name="plan_overage" value="5" id="overage_rate_1">
+                $5/GB</label>
+            <label class="h6">
+          <input type="radio" name="plan_overage" value="10" id="overage_rate_2" checked>
+              $10/GB</label>
+            <label class="h6">
+              <input type="radio" name="plan_overage" value="15" id="overage_rate_3">
+            $15/GB</label>
+            <label class="h6">
+            <input type="radio" name="plan_overage" value="20" id="overage_rate_4">
+        $20/GB</label>
+          </div>
+
+          <div class="col-12">
+            <h2 class="h6" style="color: #000000;">Food</h2>
+          </div>
+          <div class="col custom-controls-stacked">
+          </div>
+          <div class="form-check">
+            <input type="radio" name="food_cost" value="0" class="form-check-input" id="food_cost_0">
+            <label for="food_cost_0" class="form-check-label">Packed</label>
+          </div>
+          <div class="form-check">
+            <input type="radio" name="food_cost" value="10" class="form-check-input" id="food_cost_1" checked>
+            <label for="food_cost_1" class="form-check-label">Fast</label>
+          </div>
+          <div class="form-check">
+            <input type="radio" name="food_cost" value="20" class="form-check-input" id="food_cost_2">
+            <label for="food_cost_2" class="form-check-label">Tourist</label>
+          </div>
+          <div class="form-check">
+            <input type="radio" name="food_cost" value="30" class="form-check-input" id="food_cost_3">
+            <label for="food_cost_3" class="form-check-label">Fancy</label>
+          </div>
+        </div>
+
+
+        <div id="car_related_costs" class="col-sm-4 order-sm-1 pb-5 pt-3">
+          <div class="card mb-3">
+            <img src="images/pexels-photo-car.jpg" alt="car photo" class="card-img">
+            <div class="card-img-overlay">
+              <h1 class="card-title text-white h2">By Car</h1>
+            </div>
+          </div>
+          <div id="box2" class="col-sm-6 order-sm-3 pb-4 pt-3">
+            <label style="color: black;" for="Distance">Distance</label>
+            <i class="fa fa-car"></i>
+            <input name="maximum_daily_miles" type="hidden" id="maximum_daily_miles" value="560"> </br>
+            <input name="wear_per_mile" type="hidden" id="wear_per_mile" value="0.05"> </br>
+            <input class="form-control" name="miles_driving" type="number" id="miles_driving" max="3500" min="100" step="50" value="500"> <br>
+            <label style="color: black;" for="MPG">MPG</label> </br>
+            <i class="fa fa-tint"></i>
+            <input class="form-control" name="average_miles_per_gallon" type="number" id="average_miles_per_gallon" max="100" min="10" step="1" value="24"></label>
+            </br>
+            <label style="color: black;" for="Hotel">PPG</label> </br>
+            <i class="fa fa-money"></i>
+            <input class="form-control" name="cost_per_gallon" type="number" id="cost_per_gallon" max="99" min="0.10" step="0.10" value="2.30"> </br>
+          </div>
+          <div id="box2" class="col-sm-6 order-sm-3 pb-4 pt-3">
+            <label style="color: black;" for="Hotel">Hotel</label> </br>
+            <i class="fa fa-dollar"></i>
+            <input class="form-control" name="hotel_cost_per_night" type="number" id="hotel_cost_per_night" max="400" min="40" step="10" value="150"> </br>
+            <label style="color: black;" for="Discount">Discount</label> </br>
+            <i class="fa fa-dollar"></i>
+            <input class="form-control" name="car_discount" type="number" id="car_discount" max="1000" min="0" step="10" value="100"> </br>
+            <label style="color: black;" for="Parking">Parking</label> </br>
+            <i class="fa fa-dollar"></i>
+            <input class="form-control" name="parking_cost_per_day" type="number" id="parking_cost_per_day" max="200" min="0" step="5" value="50"> </br>
+          </div>
+        </div>
+
+        <div id="flight_related_costs" class="col-sm-4 order-sm-8 pb-5 pt-3">
+          <div class="card mb-3">
+            <img src="images/pexels-photo-airplane.jpg" alt="air photo" class="card-img">
+            <div class="card-img-overlay">
+              <h1 class="card-title text-white h2">By Plane</h1>
+            </div>
+          </div>
+          <div id="box3" class="col-sm-6 order-sm-3 pb-4 pt-3">
+            <label style="color: black;" for="miles_flying">Distance</label> </br>
+            <i class="fa fa-plane"></i>
+            <input name="flight_speed" type="hidden" id="flight_speed" value="575"> </br>
+            <input class="form-control" type="hidden" name="airport_hours" id="airport_hours" value="2.5"> </br>
+            <input class="form-control" name="miles_flying" type="number" id="miles_flying" max="3500" min="100" step="50" value="500">
+            </br>
+            <label style="color: black;" for="Ticket">Ticket</label> </br>
+            <i class="fa fa-dollar"></i>
+            <input class="form-control" name="flight_cost" type="number" id="flight_cost" max="3000" min="50" step="50" value="500">
+            </br>
+            <label style="color: black;" for="checked_bags_per_traveler">Bags</label> </br>
+            <i class="fa fa-briefcase"></i>
+            <input class="form-control" name="checked_bags_per_traveler" type="number" id="checked_bags_per_traveler" max="2" min="0" value="1"> <br>
+            <input name="cost_per_bag" type="hidden" id="cost_per_bag" value="50">
+            </br>
+          </div>
+          <div id="box3" class="col-sm-6 order-sm-3 pb-4 pt-3">
+            <label style="color: black;" name="Transit">Transit</label> </br>
+            <i class="fa fa-dollar"></i>
+            <input class="form-control" name="flight_transit_cost" type="number" id="flight_transit_cost" max="1000" min="0" step="10" value="100"> </br>
+            <label style="color: black;" for="Discount">Discount</label> </br>
+            <i class="fa fa-dollar"></i>
+            <input class="form-control" name="flight_discount" type="number" id="flight_discount" max="1000" min="0" step="10" value="100"> </br>
+          </div>
+
+
+          <div class="col-12">
+            <h2 class="h6" style="color: #000000;">@Airport</h2>
+          </div>
+          <div class="col custom-controls-stacked input-group">
+            <label class="h6">
+              <label style="color: #000000;">
+    <input type="checkbox" name="flight_amenities" value="10" id="flight_amenities_wifi">
+    Wi-Fi $10</label>
+            <label class="h6">
+              <label style="color: #000000;">
+    <input type="checkbox" name="flight_amenities" value="10" id="flight_amenities_food">
+    Food/Beverage $10</label>
+          </div>
+          <div class="col-12">
+            <h2 class="h6" style="color: #000000;">@Flight</h2>
+          </div>
+          <div class="col custom-controls-stacked input-group">
+            <label style="color: #000000;">
+              <label class="h6">
+<input type="checkbox" name="flight_amenities" value="10" id="flight_amenities_wifi">
+Drink 10$</label>
+            <label class="h6">
+<input type="checkbox" name="flight_amenities" value="10" id="flight_amenities_food">
+Wi-Fi 20$</label>
+            <label class="h6">
+<input type="checkbox" name="flight_amenities" value="10" id="flight_amenities_food">
+Tunes 30$</label>
+
+          </div>
+        </div>
+
+        <div class="fixed-bottom">
+          <div class="container">
+            <button type="button" class="btn btn-primary btn-lg btn-block" id="update_button" autofocus>Update</button>
+          </div>
+        </div>
+    </form>
+    </div>
+  </div>
+  <div id="results"></div>
+</body>
+
+</html>
